@@ -1,0 +1,16 @@
+[submodule "ironstone-core"]
+	path = ironstone-core
+	url = http://192.168.4.97:7990/scm/is/ironstone-core.git
+	branch = dev
+[submodule "ironstone-object-model"]
+	path = ironstone-object-model
+	url = http://192.168.4.97:7990/scm/is/ironstone-object-model.git
+	branch = dev
+[submodule "ironstone-structures"]
+	path = ironstone-structures
+	url = http://192.168.4.97:7990/scm/is/ironstone-structures.git
+	branch = dev
+[submodule "ironstone-housing"]
+	path = ironstone-housing
+	url = http://192.168.4.97:7990/scm/is/ironstone-housing.git
+	branch = dev
