@@ -14,3 +14,7 @@
 	path = ironstone-housing
 	url = http://192.168.4.97:7990/scm/is/ironstone-housing.git
 	branch = dev
+[submodule "DesignCalculations"]
+	path = DesignCalculations
+	url = https://github.com/JPPGroup/DesignCalculations.git
+	branch = InitialStructure
