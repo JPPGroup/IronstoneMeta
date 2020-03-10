@@ -14,3 +14,7 @@
 	path = ironstone-housing
 	url = http://192.168.4.97:7990/scm/is/ironstone-housing.git
 	branch = dev
+[submodule "ironstone-draughter"]
+	path = ironstone-draughter
+	url = http://192.168.4.97:7990/scm/is/ironstone-draughter.git
+	branch = features/IS-1-Drafter
