@@ -22,3 +22,11 @@
 	path = DesignCalculations
 	url = https://github.com/JPPGroup/DesignCalculations.git
 	branch = InitialStructure
+[submodule "BackgroundPipeline"]
+	path = BackgroundPipeline
+	url = https://github.com/JPPGroup/BackgroundPipeline.git
+	branch = features/razor-ui
+[submodule "Common"]
+	path = Common
+	url = https://github.com/JPPGroup/Common.git
+	branch = features/pipeline-improvements
