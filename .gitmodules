@@ -30,3 +30,6 @@
 	path = Common
 	url = https://github.com/JPPGroup/Common.git
 	branch = features/pipeline-improvements
+[submodule "ProjectDocuments"]
+	path = ProjectDocuments
+	url = https://github.com/JPPGroup/ProjectDocuments.git
