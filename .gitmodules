@@ -1,23 +1,3 @@
-[submodule "ironstone-core"]
-	path = ironstone-core
-	url = http://192.168.4.97:7990/scm/is/ironstone-core.git
-	branch = dev
-[submodule "ironstone-object-model"]
-	path = ironstone-object-model
-	url = http://192.168.4.97:7990/scm/is/ironstone-object-model.git
-	branch = dev
-[submodule "ironstone-structures"]
-	path = ironstone-structures
-	url = http://192.168.4.97:7990/scm/is/ironstone-structures.git
-	branch = dev
-[submodule "ironstone-housing"]
-	path = ironstone-housing
-	url = http://192.168.4.97:7990/scm/is/ironstone-housing.git
-	branch = dev
-[submodule "ironstone-draughter"]
-	path = ironstone-draughter
-	url = http://192.168.4.97:7990/scm/is/ironstone-draughter.git
-	branch = features/IS-1-Drafter
 [submodule "DesignCalculations"]
 	path = DesignCalculations
 	url = https://github.com/JPPGroup/DesignCalculations.git
@@ -33,3 +13,18 @@
 [submodule "ProjectDocuments"]
 	path = ProjectDocuments
 	url = https://github.com/JPPGroup/ProjectDocuments.git
+[submodule "IronstoneCore"]
+	path = IronstoneCore
+	url = https://github.com/JPPGroup/IronstoneCore.git
+[submodule "IronstoneDrafter"]
+	path = IronstoneDrafter
+	url = https://github.com/JPPGroup/IronstoneDrafter.git
+[submodule "IronstoneObjectModel"]
+	path = IronstoneObjectModel
+	url = https://github.com/JPPGroup/IronstoneObjectModel.git
+[submodule "IronstoneStructures"]
+	path = IronstoneStructures
+	url = https://github.com/JPPGroup/IronstoneStructures.git
+[submodule "IronstoneHousing"]
+	path = IronstoneHousing
+	url = https://github.com/JPPGroup/IronstoneHousing.git
