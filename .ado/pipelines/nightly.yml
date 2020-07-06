@@ -1,5 +1,3 @@
-
-
 trigger: none
 
 schedules:
@@ -17,11 +15,11 @@ jobs:
     matrix:     
       2021:
         poolFlag: 2021
-    continueOnError: true
-    timeoutInMinutes: 10
-    pool:
-      name: Autodesk
-      demands: Civil3d  -equals $(poolFlag)
+  continueOnError: true
+  timeoutInMinutes: 10
+  pool:
+    name: Autodesk
+    demands: Civil3d  -equals $(poolFlag)
     
   steps:
   - task: NuGetCommand@2
