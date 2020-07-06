@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ironstone Core", "ironstone-core\Ironstone Core\Ironstone Core.csproj", "{A3BFA507-A2C4-4C33-943B-6083133EE63C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IronstoneCore", "IronstoneCore\IronstoneCore\IronstoneCore.csproj", "{A3BFA507-A2C4-4C33-943B-6083133EE63C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ironstone Core UI", "ironstone-core\Ironstone Core UI\Ironstone Core UI.csproj", "{AC79C0AE-544A-4CB5-8FB7-665754BDEA9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IronstoneCoreUI", "IronstoneCore\IronstoneCoreUI\IronstoneCoreUI.csproj", "{AC79C0AE-544A-4CB5-8FB7-665754BDEA9F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Housing Module", "Housing Module", "{4E6AA5A3-E1D8-47FA-A656-3DC19971F864}"
 EndProject
@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{5C7C0C5D-4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Structures Module", "Structures Module", "{2B35770D-2956-499D-B949-1FC2F03ABEAA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ironstone Core Tests", "ironstone-core\Ironstone Core Tests\Ironstone Core Tests.csproj", "{1F8281CB-B208-45D3-A8CA-CDED34C48636}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IronstoneCoreTests", "IronstoneCore\IronstoneCoreTests\IronstoneCoreTests.csproj", "{1F8281CB-B208-45D3-A8CA-CDED34C48636}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4A23EDAC-FC39-4E1D-8A80-C8E9023D0E55}"
 EndProject
@@ -47,9 +47,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackgroundPipeline", "Backg
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackgroundPipeline.Autocad", "BackgroundPipeline\src\BackgroundPipeline.Autocad\BackgroundPipeline.Autocad.csproj", "{53FFCC38-9529-46C8-93BC-AC6C5281DAAD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Draughter.TaskPayloads", "ironstone-draughter\Draughter.TaskPayloads\Draughter.TaskPayloads.csproj", "{96383118-323C-4A6C-9084-E356DA93F7B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Draughter.TaskPayloads", "IronstoneDrafter\Draughter.TaskPayloads\Draughter.TaskPayloads.csproj", "{96383118-323C-4A6C-9084-E356DA93F7B1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Draughter.TaskPayloads.Concretes", "ironstone-draughter\Draughter.TaskPayloads.Concretes\Draughter.TaskPayloads.Concretes.csproj", "{0445A55E-8C31-4DC1-96DF-C2C99C95C7CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Draughter.TaskPayloads.Concretes", "IronstoneDrafter\Draughter.TaskPayloads.Concretes\Draughter.TaskPayloads.Concretes.csproj", "{0445A55E-8C31-4DC1-96DF-C2C99C95C7CB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document Management Module", "Document Management Module", "{5BFC964C-5177-4A7A-802F-F45232E1C35F}"
 EndProject
