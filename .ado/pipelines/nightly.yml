@@ -1,0 +1,48 @@
+
+
+trigger: none
+
+schedules:
+- cron: "0 0 * * *"
+  displayName: Daily Build
+  branches:
+    include:
+    - master
+    - features/*
+    - bugfixes/*  
+
+jobs:
+- job: Test
+  strategy:
+    matrix:     
+      2021:
+        poolFlag: 2021
+    continueOnError: true
+    timeoutInMinutes: 10
+    pool:
+      name: Autodesk
+      demands: Civil3d  -equals $(poolFlag)
+    
+  steps:
+  - task: NuGetCommand@2
+    inputs:
+      command: 'restore'
+      restoreSolution: '**/*.sln'
+      feedsToUse: 'select'
+      noCache: true
+  - task: VSBuild@1
+    inputs:
+      solution: '**\*.sln'
+      platform: 'x64'
+      configuration: 'Release'
+      clean: true
+  - task: VSTest@2
+    inputs:
+      testSelector: 'testAssemblies'
+      testAssemblyVer2: |
+        **\*test*.dll
+        !**\*TestAdapter.dll
+        !**\obj\**
+      searchFolder: '$(System.DefaultWorkingDirectory)'
+      uiTests: true
+      codeCoverageEnabled: true
