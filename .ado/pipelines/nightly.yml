@@ -27,12 +27,12 @@ jobs:
   - task: NuGetCommand@2
     inputs:
       command: 'restore'
-      restoreSolution: '**/*.sln'
+      restoreSolution: 'Ironstone-Meta.sln'
       feedsToUse: 'select'
       noCache: true
   - task: VSBuild@1
     inputs:
-      solution: '**\*.sln'
+      solution: 'Ironstone-Meta.sln'
       platform: 'x64'
       configuration: 'Release'
       clean: true
