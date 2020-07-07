@@ -21,15 +21,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4A23EDAC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installers", "Installers", "{0F373112-E87A-4558-813A-2D0B939F7081}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HousingObjectModel", "ironstone-object-model\Housing\HousingObjectModel.csproj", "{4D333FFB-1A94-441F-BD8E-753277471DA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HousingObjectModel", "IronstoneObjectModel\Housing\HousingObjectModel.csproj", "{4D333FFB-1A94-441F-BD8E-753277471DA1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StructuresObjectModel", "ironstone-object-model\Structures\StructuresObjectModel.csproj", "{9BF63A2E-9B5F-4E03-B6BD-A29F0A42350C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StructuresObjectModel", "IronstoneObjectModel\Structures\StructuresObjectModel.csproj", "{9BF63A2E-9B5F-4E03-B6BD-A29F0A42350C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignCalculations.Calculations", "DesignCalculations\src\DesignCalculations.Calculations\DesignCalculations.Calculations.csproj", "{E98AF1DF-EF2B-49CA-8A13-2B549FD7167A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AF782F2C-2CC8-4484-93C3-DC73939B598A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StructuresObjectModelTests", "ironstone-object-model\StructuresTests\StructuresObjectModelTests.csproj", "{0CBD1FDB-1A05-4A7B-8CD9-E9B265F474FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StructuresObjectModelTests", "IronstoneObjectModel\StructuresTests\StructuresObjectModelTests.csproj", "{0CBD1FDB-1A05-4A7B-8CD9-E9B265F474FA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{EFA3E9B1-25DD-448D-903B-4755D46377DA}"
 EndProject
@@ -37,11 +37,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignCalculations.Calculat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DF127511-4D29-499D-B6DA-7676C84D2433}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HousingObjectModelTests", "ironstone-object-model\HousingTests\HousingObjectModelTests.csproj", "{FA47A4E1-EB61-4C39-A3B6-F7AF9612FD3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HousingObjectModelTests", "IronstoneObjectModel\HousingTests\HousingObjectModelTests.csproj", "{FA47A4E1-EB61-4C39-A3B6-F7AF9612FD3C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Draughter", "Draughter", "{27E5137F-425A-4B56-AF32-C73C2B4FA7FC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Draughter", "ironstone-draughter\Draughter.csproj", "{3E2BE099-B47E-43C8-8E75-6F334C8C92DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Draughter", "IronstoneDrafter\Draughter.csproj", "{3E2BE099-B47E-43C8-8E75-6F334C8C92DB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackgroundPipeline", "BackgroundPipeline\src\BackgroundPipeline\BackgroundPipeline.csproj", "{45320FBD-54A5-4AC1-A513-A33DCDF7FED5}"
 EndProject
@@ -53,7 +53,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Draughter.TaskPayloads.Conc
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document Management Module", "Document Management Module", "{5BFC964C-5177-4A7A-802F-F45232E1C35F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentManagementObjectModel", "ironstone-object-model\DocumentManagement\DocumentManagementObjectModel.csproj", "{0A905F9C-78F0-4F0C-9204-5E96F9F4C728}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentManagementObjectModel", "IronstoneObjectModel\DocumentManagement\DocumentManagementObjectModel.csproj", "{0A905F9C-78F0-4F0C-9204-5E96F9F4C728}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\src\Common\Common.csproj", "{911A9ECC-5AAF-4927-A708-0AF686E05932}"
 EndProject

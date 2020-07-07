@@ -49,7 +49,7 @@ jobs:
     inputs:
       solution: 'Ironstone-Meta.sln'
       platform: 'x64'
-      configuration: 'Release'
+      configuration: 'ReleaseLocal'
       clean: true
   - task: VSTest@2
     inputs:
