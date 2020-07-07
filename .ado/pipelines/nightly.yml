@@ -12,7 +12,7 @@ schedules:
 jobs:
 - job: Test
   strategy:
-        matrix:     
+    matrix:     
       2021:
         poolFlag: 2021
       2020:
