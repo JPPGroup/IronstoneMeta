@@ -1,4 +1,5 @@
 trigger: none
+pr: none
 
 schedules:
 - cron: "0 0 * * *"
@@ -16,8 +17,7 @@ jobs:
       2021:
         poolFlag: 2021
       2020:
-        poolFlag: 2020
-  continueOnError: true
+        poolFlag: 2020  
   timeoutInMinutes: 10
   pool:
     name: Autodesk
