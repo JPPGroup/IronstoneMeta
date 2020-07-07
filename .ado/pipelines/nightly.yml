@@ -24,6 +24,14 @@ jobs:
   steps:
   - checkout: self
     submodules: true
+  - task: DownloadSecureFile@1
+    name: nconf
+    displayName: 'Download Nuget Config'
+    inputs:
+      secureFile: 'nuget.config'
+  - script: |
+      echo Moving $(nconf.secureFilePath) to the root directory...
+      cp $(nconf.secureFilePath) $(Pipeline.Workspace)      
   - task: NuGetCommand@2
     inputs:
       command: 'restore'
