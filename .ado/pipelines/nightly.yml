@@ -36,7 +36,7 @@ jobs:
     inputs:
       command: 'restore'
       restoreSolution: 'Ironstone-Meta.sln'
-      feedsToUse: 'select'
+      feedsToUse: 'config'
       noCache: true
   - task: VSBuild@1
     inputs:
