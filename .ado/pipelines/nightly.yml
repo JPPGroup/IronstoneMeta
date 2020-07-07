@@ -31,7 +31,7 @@ jobs:
       secureFile: 'nuget.config'
   - script: |
       echo Moving $(nconf.secureFilePath) to the root directory...
-      cp $(nconf.secureFilePath) $(Pipeline.Workspace)      
+      xcopy $(nconf.secureFilePath) $(Pipeline.Workspace)      
   - task: NuGetCommand@2
     inputs:
       command: 'restore'
