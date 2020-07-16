@@ -31,12 +31,12 @@ jobs:
       command: 'restore'
       restoreSolution: '${{ parameters.SolutionName }}.sln'      
       feedsToUse: 'config'
-      noCache: true
-  - task: NuGetCommand@2
+      noCache: true  
+  - task: DotNetCoreCLI@2
     inputs:
       command: 'restore'
-      restoreSolution: 'IronstoneBase\IronstoneBaseProject.csproj'      
       feedsToUse: 'config'
+      projects: 'IronstoneBase\IronstoneBaseProject.csproj'
       noCache: true      
   - task: VSBuild@1
     inputs:
