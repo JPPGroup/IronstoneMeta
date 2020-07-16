@@ -1,0 +1,40 @@
+parameters:
+- name: SolutionName  
+  default: ''
+
+jobs:
+- job: Deploy  
+  dependsOn: Test
+  pool:
+    vmImage: 'windows-latest'
+  steps:
+  - checkout: none
+  - download: current
+  - task: NuGetToolInstaller@1
+    inputs:      
+      checkLatest: true
+  - task: NuGetCommand@2
+    inputs:
+      command: 'push'
+      packagesToPush: '$(Pipeline.Workspace)/**/*.nupkg;!$(Pipeline.Worksapce)/**/*.symbols.nupkg'
+      nuGetFeedType: 'external'
+      publishFeedCredentials: 'GitHub Package Repo'
+  - task: GitHubRelease@1
+    inputs:
+      gitHubConnection: 'Github'
+      repositoryName: 'JPPGroup/${{ parameters.SolutionName }}'
+      action: 'create'
+      target: '$(Build.SourceVersion)'
+      tagSource: 'gitTag'
+      tagPattern: 'v.*'
+      releaseNotesSource: 'inline'
+      releaseNotesInline: 'Latest version'
+      isDraft: true
+      changeLogCompareToRelease: 'lastFullRelease'
+      changeLogType: 'commitBased'
+      assets: '$(Pipeline.Workspace)/**/*.nupkg;!$(Pipeline.Worksapce)/**/*.symbols.nupkg'
+
+
+
+
+      

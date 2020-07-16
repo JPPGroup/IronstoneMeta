@@ -25,7 +25,7 @@ jobs:
     
   steps:
   - checkout: self
-    submodules: true
+    submodules: recursive
     clean: true
     fetchDepth: 1
   - task: DownloadSecureFile@1

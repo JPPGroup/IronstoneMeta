@@ -1,0 +1,67 @@
+parameters:
+- name: SolutionName  
+  default: ''
+
+jobs:
+- job: Build
+  pool:
+    vmImage: 'windows-latest'
+  strategy:
+    matrix:     
+      2021:
+        poolFlag: 2021
+  steps:
+  - checkout: self
+    submodules: recursive
+    clean: true
+    fetchDepth: 1
+  - task: NuGetToolInstaller@1
+    inputs:      
+      checkLatest: true
+  - task: NuGetCommand@2
+    inputs:
+      command: 'restore'
+      restoreSolution: '${{ parameters.SolutionName }}.sln'      
+      noCache: true
+  - task: VSBuild@1
+    inputs:
+      solution: '${{ parameters.SolutionName }}.sln'
+      platform: 'x64'
+      configuration: 'Release $(poolFlag)'
+      clean: true
+  - task: NuGetCommand@2
+    inputs:
+      command: 'pack'
+      packagesToPack: '${{ parameters.SolutionName }}.sln'      
+      configuration: 'Release $(poolFlag)'
+      versioningScheme: 'off'  
+  - publish: $(System.DefaultWorkingDirectory)/bin
+    artifact: Build $(poolFlag)
+
+
+- job: Test
+  strategy:
+    matrix:     
+      2021:
+        poolFlag: 2021
+  timeoutInMinutes: 10
+  pool:
+    name: Autodesk
+    demands: Civil3d  -equals $(poolFlag)
+  steps:      
+  - download: current
+    artifact: Build $(poolFlag)
+  - task: VisualStudioTestPlatformInstaller@1
+    inputs:
+      packageFeedSelector: 'nugetOrg'
+      versionSelector: 'latestPreRelease'
+  - task: VSTest@2
+    inputs:
+      testSelector: 'testAssemblies'
+      testAssemblyVer2: |
+        **\*Tests*.dll
+        !**\*TestAdapter.dll
+        !**\obj\**
+      searchFolder: '$(Pipeline.Workspace)'
+      uiTests: true
+      otherConsoleOptions: '/platform:x64'
