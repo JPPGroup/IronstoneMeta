@@ -34,12 +34,7 @@ jobs:
       feedsToUse: 'config'
       nugetConfigPath: 'nuget.config'
       verbosityRestore: 'Normal'
-      noCache: true
-  
-  - task: DotNetCoreCLI@2
-    inputs:
-      command: 'clean'
-      projects: '${{ parameters.SolutionName }}.sln'         
+      noCache: true   
   
   - task: DotNetCoreCLI@2
     inputs:
