@@ -10,7 +10,7 @@ jobs:
     matrix:     
       2021:
         poolFlag: 2021
-  steps:
+  steps:  
   - checkout: self
     submodules: recursive
     clean: true
@@ -18,10 +18,19 @@ jobs:
   - task: NuGetToolInstaller@1
     inputs:      
       checkLatest: true
+  - task: DownloadSecureFile@1
+    name: nconf
+    displayName: 'Download Nuget Config'
+    inputs:
+      secureFile: 'nuget.config'
+  - script: |
+      echo Moving $(nconf.secureFilePath) to the root directory $(System.DefaultWorkingDirectory)...
+      xcopy $(nconf.secureFilePath) $(System.DefaultWorkingDirectory)      
   - task: NuGetCommand@2
     inputs:
       command: 'restore'
       restoreSolution: '${{ parameters.SolutionName }}.sln'      
+      feedsToUse: 'config'
       noCache: true
   - task: VSBuild@1
     inputs:
@@ -35,6 +44,7 @@ jobs:
       packagesToPack: '${{ parameters.SolutionName }}.sln'      
       configuration: 'Release $(poolFlag)'
       versioningScheme: 'off'  
+      buildProperties: 'Id=$(poolFlag)'  
   - publish: $(System.DefaultWorkingDirectory)/bin
     artifact: Build $(poolFlag)
 
@@ -45,6 +55,7 @@ jobs:
       2021:
         poolFlag: 2021
   timeoutInMinutes: 10
+  dependsOn: Build
   pool:
     name: Autodesk
     demands: Civil3d  -equals $(poolFlag)
