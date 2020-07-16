@@ -32,6 +32,8 @@ jobs:
       command: 'restore'
       projects: '${{ parameters.SolutionName }}.sln'   
       feedsToUse: 'config'
+      nugetConfigPath: 'nuget.config'
+      verbosityRestore: 'Normal'
       noCache: true
   
   - task: DotNetCoreCLI@2
