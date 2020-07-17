@@ -36,11 +36,12 @@ jobs:
       verbosityRestore: 'Normal'
       noCache: true   
   
-  - task: DotNetCoreCLI@2
+  - task: VSBuild@1
     inputs:
-      command: 'build'
-      projects: '${{ parameters.SolutionName }}.sln'   
-      arguments: '--configuration "Release $(poolFlag)" /p:Platform=x64'           
+      solution: '${{ parameters.SolutionName }}.sln'
+      platform: 'x64'
+      configuration: 'Release $(poolFlag)'
+      clean: true    
 
   - task: NuGetCommand@2
     inputs:
