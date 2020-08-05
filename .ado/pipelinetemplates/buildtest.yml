@@ -59,7 +59,7 @@ jobs:
   - task: NuGetCommand@2
     inputs:
       command: 'pack'
-      packagesToPack: '**\\*.csproj;!**\\*Tests.csproj;!**\\BaseProject.csproj'      
+      packagesToPack: '**\\*.csproj;!**\\*Tests.csproj;!**\\*BaseProject.csproj'      
       configuration: 'Release $(poolFlag)'
       versioningScheme: 'off'  
       buildProperties: 'Id=$(poolFlag)'  
