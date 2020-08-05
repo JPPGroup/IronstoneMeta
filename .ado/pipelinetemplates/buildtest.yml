@@ -64,7 +64,11 @@ jobs:
       versioningScheme: 'off'  
       buildProperties: 'Id=$(poolFlag);Platform=x64'        
       
-  - publish: $(System.DefaultWorkingDirectory)\**\bin\**
+  - task: CopyFiles@2
+    inputs:
+      contents: '$(System.DefaultWorkingDirectory)\**\bin\**'
+      targetFolder: $(Build.ArtifactStagingDirectory)
+  - publish: $(Build.ArtifactStagingDirectory)
     artifact: Build $(poolFlag)
 
 - job: Test
