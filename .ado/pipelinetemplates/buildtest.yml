@@ -63,6 +63,7 @@ jobs:
       configuration: 'Release $(poolFlag)'
       versioningScheme: 'off'  
       buildProperties: 'Id=$(poolFlag)'  
+      arguments: 'Platform=x64'
       
   - publish: $(System.DefaultWorkingDirectory)/bin
     artifact: Build $(poolFlag)
