@@ -47,7 +47,7 @@ jobs:
   - task: NuGetCommand@2
     inputs:
       command: 'pack'
-      packagesToPack: '${{ parameters.SolutionName }}.sln'      
+      packagesToPack: '**\\*.csproj;!**\\*Tests.csproj'      
       configuration: 'Release $(poolFlag)'
       versioningScheme: 'off'  
       buildProperties: 'Id=$(poolFlag)'  
