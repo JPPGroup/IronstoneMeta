@@ -60,9 +60,9 @@ jobs:
     inputs:
       command: 'pack'
       packagesToPack: '**\\*.csproj;!**\\*Tests.csproj;!**\\*BaseProject.csproj'      
-      configuration: 'Release $(poolFlag)|x64'
+      configuration: 'Release $(poolFlag)'
       versioningScheme: 'off'  
-      buildProperties: 'Id=$(poolFlag)'        
+      buildProperties: 'Id=$(poolFlag);Platform=x64'        
       
   - publish: $(System.DefaultWorkingDirectory)/bin
     artifact: Build $(poolFlag)
