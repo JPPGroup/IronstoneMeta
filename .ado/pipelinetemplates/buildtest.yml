@@ -42,6 +42,7 @@ jobs:
       platform: 'x64'
       configuration: 'Release $(poolFlag)'
       clean: true    
+      msbuildArgs: '/p:RunWixToolsOutOfProc=true'
 
   - task: NuGetCommand@2
     inputs:
