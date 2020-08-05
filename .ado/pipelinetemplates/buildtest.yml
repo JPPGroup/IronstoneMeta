@@ -76,7 +76,7 @@ jobs:
     matrix:     
       2021:
         poolFlag: 2021
-  timeoutInMinutes: 10
+  timeoutInMinutes: 30
   dependsOn: Build
   pool:
     name: Autodesk
