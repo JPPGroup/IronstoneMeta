@@ -64,7 +64,7 @@ jobs:
       versioningScheme: 'off'  
       buildProperties: 'Id=$(poolFlag);Platform=x64'        
       
-  - publish: $(System.DefaultWorkingDirectory)/bin
+  - publish: $(System.DefaultWorkingDirectory)\**\bin\**
     artifact: Build $(poolFlag)
 
 - job: Test
