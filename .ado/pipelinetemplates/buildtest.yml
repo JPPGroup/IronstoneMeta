@@ -36,8 +36,8 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
-      $Secure_String_Pwd = ConvertTo-SecureString "Cedarbarn123" -AsPlainText -Force
-      Import-PfxCertificate -FilePath $(Cert.secureFilePath) -Password $Secure_String_Pwd               
+        $Secure_String_Pwd = ConvertTo-SecureString "Cedarbarn123" -AsPlainText -Force
+        Import-PfxCertificate -FilePath $(Cert.secureFilePath) -Password $Secure_String_Pwd               
       
   - task: DotNetCoreCLI@2
     inputs:
