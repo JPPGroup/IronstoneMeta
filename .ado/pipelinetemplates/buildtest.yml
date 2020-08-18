@@ -10,6 +10,8 @@ jobs:
     matrix:     
       2021:
         poolFlag: 2021
+      2020:
+        poolFlag: 2020
   steps:  
   - checkout: self
     submodules: recursive
@@ -76,6 +78,8 @@ jobs:
     matrix:     
       2021:
         poolFlag: 2021
+      2020:
+        poolFlag: 2020
   timeoutInMinutes: 30
   dependsOn: Build
   pool:
