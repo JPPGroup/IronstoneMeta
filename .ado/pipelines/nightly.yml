@@ -8,56 +8,11 @@ schedules:
     include:
     - master
     - features/*
-    - bugfixes/*  
-
+    - bugfixes/* 
+   
+      
 jobs:
-- job: Test
-  strategy:
-    matrix:     
-      2021:
-        poolFlag: 2021
-      2020:
-        poolFlag: 2020  
-  timeoutInMinutes: 10
-  pool:
-    name: Autodesk
-    demands: Civil3d  -equals $(poolFlag)
-    
-  steps:
-  - checkout: self
-    submodules: recursive
-    clean: true
-    fetchDepth: 1
-  - task: DownloadSecureFile@1
-    name: nconf
-    displayName: 'Download Nuget Config'
-    inputs:
-      secureFile: 'nuget.config'
-  - script: |
-      echo Moving $(nconf.secureFilePath) to the root directory $(System.DefaultWorkingDirectory)...
-      xcopy $(nconf.secureFilePath) $(System.DefaultWorkingDirectory)      
-  - task: NuGetToolInstaller@1
-    inputs:      
-      checkLatest: true
-  - task: NuGetCommand@2
-    inputs:
-      command: 'restore'
-      restoreSolution: 'Ironstone-Meta.sln'
-      feedsToUse: 'config'
-      noCache: true
-  - task: VSBuild@1
-    inputs:
-      solution: 'Ironstone-Meta.sln'
-      platform: 'x64'
-      configuration: 'ReleaseLocal'
-      clean: true
-  - task: VSTest@2
-    inputs:
-      testSelector: 'testAssemblies'
-      testAssemblyVer2: |
-        **\*test*.dll
-        !**\*TestAdapter.dll
-        !**\obj\**
-      searchFolder: '$(System.DefaultWorkingDirectory)'
-      uiTests: true
-      codeCoverageEnabled: true
+- template: .ado/pipelinetemplates/buildtest.yml@templates  # Template reference
+  parameters:
+    SolutionName: 'IronstoneMeta'    
+    LocalBuild: true
