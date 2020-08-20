@@ -14,5 +14,5 @@ schedules:
 jobs:
 - template: ../pipelinetemplates/buildtest.yml
   parameters:
-    SolutionName: 'IronstoneMeta'    
+    SolutionName: 'Ironstone-Meta'    
     Build: 'ReleaseLocal'
