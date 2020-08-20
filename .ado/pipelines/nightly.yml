@@ -12,7 +12,7 @@ schedules:
    
       
 jobs:
-- template: .ado/pipelinetemplates/buildtest.yml@templates  # Template reference
+- template: .ado/pipelinetemplates/buildtest.yml
   parameters:
     SolutionName: 'IronstoneMeta'    
     LocalBuild: true
