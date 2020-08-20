@@ -15,4 +15,4 @@ jobs:
 - template: ../pipelinetemplates/buildtest.yml
   parameters:
     SolutionName: 'IronstoneMeta'    
-    LocalBuild: true
+    Build: 'ReleaseLocal'

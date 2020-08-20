@@ -1,8 +1,8 @@
 parameters:
 - name: SolutionName  
   default: ''
-- name: LocalBuild
-  default: false
+- name: Build
+  default: Release
 
 jobs:
 - job: Build
@@ -56,7 +56,7 @@ jobs:
     inputs:
       solution: '${{ parameters.SolutionName }}.sln'
       platform: 'x64'
-      configuration: 'Release${{ if LocalBuild, 'Local') }} $(poolFlag)'
+      configuration: '$(Build) $(poolFlag)'
       clean: true    
       msbuildArgs: '/p:RunWixToolsOutOfProc=true'
 
@@ -64,7 +64,7 @@ jobs:
     inputs:
       command: 'pack'
       packagesToPack: '**\\*.csproj;!**\\*Tests.csproj;!**\\*Base*Project.csproj'      
-      configuration: 'Release${{ if LocalBuild, 'Local') }} $(poolFlag)'
+      configuration: '$(Build) $(poolFlag)'
       versioningScheme: 'off'  
       buildProperties: 'Id=$(poolFlag);Platform=x64'        
       
