@@ -56,7 +56,7 @@ jobs:
     inputs:
       solution: '${{ parameters.SolutionName }}.sln'
       platform: 'x64'
-      configuration: '$(Build) $(poolFlag)'
+      configuration: '${{ parameters.Build }} $(poolFlag)'
       clean: true    
       msbuildArgs: '/p:RunWixToolsOutOfProc=true'
 
@@ -64,7 +64,7 @@ jobs:
     inputs:
       command: 'pack'
       packagesToPack: '**\\*.csproj;!**\\*Tests.csproj;!**\\*Base*Project.csproj'      
-      configuration: '$(Build) $(poolFlag)'
+      configuration: '${{ parameters.Build }} $(poolFlag)'
       versioningScheme: 'off'  
       buildProperties: 'Id=$(poolFlag);Platform=x64'        
       
