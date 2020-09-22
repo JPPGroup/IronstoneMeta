@@ -43,14 +43,14 @@ jobs:
         $Secure_String_Pwd = ConvertTo-SecureString "Cedarbarn123" -AsPlainText -Force
         Import-PfxCertificate -FilePath $(Cert.secureFilePath) -CertStoreLocation Cert:\LocalMachine\My -Password $Secure_String_Pwd               
       
-  - task: DotNetCoreCLI@2
-    inputs:
-      command: 'restore'
-      projects: '${{ parameters.SolutionName }}.sln'   
-      feedsToUse: 'config'
-      nugetConfigPath: 'nuget.config'
-      verbosityRestore: 'Normal'
-      noCache: true   
+#  - task: DotNetCoreCLI@2
+#    inputs:
+#      command: 'restore'
+#      projects: '${{ parameters.SolutionName }}.sln'   
+#      feedsToUse: 'config'
+#      nugetConfigPath: 'nuget.config'
+#      verbosityRestore: 'Normal'
+#      noCache: true   
   
   - task: VSBuild@1
     inputs:
@@ -59,6 +59,7 @@ jobs:
       configuration: '${{ parameters.Build }} $(poolFlag)'
       clean: true    
       msbuildArgs: '/p:RunWixToolsOutOfProc=true'
+      restoreNugetPackages: true
 
   - task: NuGetCommand@2
     inputs:
