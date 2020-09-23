@@ -51,6 +51,9 @@ jobs:
 #      nugetConfigPath: 'nuget.config'
 #      verbosityRestore: 'Normal'
 #      noCache: true   
+
+  - script: |
+      "C:\Program Files\dotnet\dotnet.exe" restore $(Build.SourcesDirectory)\${{ parameters.SolutionName }}.sln --configfile $(System.DefaultWorkingDirectory)\nuget.config --no-cache --verbosity Normal /p:Configuration="${{ parameters.Build }} $(poolFlag)"
   
   - task: VSBuild@1
     inputs:
@@ -58,8 +61,7 @@ jobs:
       platform: 'x64'
       configuration: '${{ parameters.Build }} $(poolFlag)'
       clean: true    
-      msbuildArgs: '/p:RunWixToolsOutOfProc=true'
-      restoreNugetPackages: true
+      msbuildArgs: '/p:RunWixToolsOutOfProc=true'      
 
   - task: NuGetCommand@2
     inputs:
