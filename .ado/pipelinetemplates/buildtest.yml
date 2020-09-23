@@ -107,3 +107,5 @@ jobs:
       searchFolder: '$(Pipeline.Workspace)'
       uiTests: true
       otherConsoleOptions: '/platform:x64'
+      testRunTitle: '$(poolFlag) Tests'
+      failOnMinTestsNotRun: true
