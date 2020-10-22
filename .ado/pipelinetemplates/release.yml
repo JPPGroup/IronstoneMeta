@@ -1,6 +1,8 @@
 parameters:
 - name: SolutionName  
   default: ''
+- name: Build
+  default: Release
 
 jobs:
 - job: Deploy  
@@ -10,6 +12,14 @@ jobs:
   steps:
   - checkout: none
   - download: current
+  - task: DownloadSecureFile@1
+    name: nconf
+    displayName: 'Download Nuget Config'
+    inputs:
+      secureFile: 'nuget.config'
+  - script: |
+      echo Moving $(nconf.secureFilePath) to the root directory $(System.DefaultWorkingDirectory)...
+      xcopy $(nconf.secureFilePath) $(System.DefaultWorkingDirectory)       
   - task: NuGetToolInstaller@1
     inputs:      
       checkLatest: true
@@ -17,8 +27,8 @@ jobs:
     inputs:
       command: 'push'
       packagesToPush: '$(Pipeline.Workspace)/**/*.nupkg;!$(Pipeline.Worksapce)/**/*.symbols.nupkg'
-      nuGetFeedType: 'external'
-      publishFeedCredentials: 'GitHub Package Repo'
+      feedsToUse: 'config'
+      nugetConfigPath: $(System.DefaultWorkingDirectory)/nuget.config
   - task: GitHubRelease@1
     inputs:
       gitHubConnection: 'Github'
@@ -32,9 +42,4 @@ jobs:
       isDraft: true
       changeLogCompareToRelease: 'lastFullRelease'
       changeLogType: 'commitBased'
-      assets: '$(Pipeline.Workspace)/**/*.nupkg;!$(Pipeline.Worksapce)/**/*.symbols.nupkg'
-
-
-
-
-      
+      assets: '$(Pipeline.Workspace)/**/*.nupkg;!$(Pipeline.Worksapce)/**/*.symbols.nupkg'      
