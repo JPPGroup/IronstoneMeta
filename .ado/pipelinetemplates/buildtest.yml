@@ -79,6 +79,8 @@ jobs:
     artifact: Build $(poolFlag)
 
 - job: Test
+  workspace:
+    clean: all
   strategy:
     matrix:     
       2021:
