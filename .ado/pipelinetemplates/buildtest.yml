@@ -111,3 +111,4 @@ jobs:
       otherConsoleOptions: '/platform:x64'
       testRunTitle: '$(poolFlag) Tests'
       failOnMinTestsNotRun: true
+      rerunFailedTests: true
