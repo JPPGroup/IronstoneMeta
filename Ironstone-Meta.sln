@@ -61,8 +61,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectDocuments", "Project
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectDocuments.Tests", "ProjectDocuments\tests\ProjectDocuments.Tests\ProjectDocuments.Tests.csproj", "{E036AEBA-B993-4A48-853B-A51C673ED023}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Structures", "IronstoneStructures\Structures\Structures.csproj", "{022926E1-4E0E-4E5D-8855-A4933D8C79AF}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		DebugLocal 2019|x64 = DebugLocal 2019|x64
@@ -252,18 +250,6 @@ Global
 		{E036AEBA-B993-4A48-853B-A51C673ED023}.ReleaseLocal 2020|x64.Build.0 = Release|Any CPU
 		{E036AEBA-B993-4A48-853B-A51C673ED023}.ReleaseLocal 2021|x64.ActiveCfg = Release|Any CPU
 		{E036AEBA-B993-4A48-853B-A51C673ED023}.ReleaseLocal 2021|x64.Build.0 = Release|Any CPU
-		{022926E1-4E0E-4E5D-8855-A4933D8C79AF}.DebugLocal 2019|x64.ActiveCfg = DebugLocal 2019|x64
-		{022926E1-4E0E-4E5D-8855-A4933D8C79AF}.DebugLocal 2019|x64.Build.0 = DebugLocal 2019|x64
-		{022926E1-4E0E-4E5D-8855-A4933D8C79AF}.DebugLocal 2020|x64.ActiveCfg = DebugLocal 2020|x64
-		{022926E1-4E0E-4E5D-8855-A4933D8C79AF}.DebugLocal 2020|x64.Build.0 = DebugLocal 2020|x64
-		{022926E1-4E0E-4E5D-8855-A4933D8C79AF}.DebugLocal 2021|x64.ActiveCfg = DebugLocal 2021|x64
-		{022926E1-4E0E-4E5D-8855-A4933D8C79AF}.DebugLocal 2021|x64.Build.0 = DebugLocal 2021|x64
-		{022926E1-4E0E-4E5D-8855-A4933D8C79AF}.ReleaseLocal 2019|x64.ActiveCfg = ReleaseLocal 2019|x64
-		{022926E1-4E0E-4E5D-8855-A4933D8C79AF}.ReleaseLocal 2019|x64.Build.0 = ReleaseLocal 2019|x64
-		{022926E1-4E0E-4E5D-8855-A4933D8C79AF}.ReleaseLocal 2020|x64.ActiveCfg = ReleaseLocal 2020|x64
-		{022926E1-4E0E-4E5D-8855-A4933D8C79AF}.ReleaseLocal 2020|x64.Build.0 = ReleaseLocal 2020|x64
-		{022926E1-4E0E-4E5D-8855-A4933D8C79AF}.ReleaseLocal 2021|x64.ActiveCfg = ReleaseLocal 2021|x64
-		{022926E1-4E0E-4E5D-8855-A4933D8C79AF}.ReleaseLocal 2021|x64.Build.0 = ReleaseLocal 2021|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -291,7 +277,6 @@ Global
 		{911A9ECC-5AAF-4927-A708-0AF686E05932} = {93F571F0-26F4-404F-BE33-9323A69D4726}
 		{BCAD5D2B-5A5C-4F69-A59D-50BE37E572DB} = {93F571F0-26F4-404F-BE33-9323A69D4726}
 		{E036AEBA-B993-4A48-853B-A51C673ED023} = {EFA3E9B1-25DD-448D-903B-4755D46377DA}
-		{022926E1-4E0E-4E5D-8855-A4933D8C79AF} = {2B35770D-2956-499D-B949-1FC2F03ABEAA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {14409D11-1935-4A87-9CD0-E560716C2FFD}
