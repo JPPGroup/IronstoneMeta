@@ -52,6 +52,24 @@ jobs:
 #      verbosityRestore: 'Normal'
 #      noCache: true   
 
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.9'
+    displayName: 'Use python 3.9'
+
+  - script: |
+      python -m pip install --upgrade pip
+      pip install -r Requirements.txt
+    displayName: 'Install dependencies'
+
+  - script: |
+      pip install --upgrade sphinx
+    displayName: 'Install sphinx'
+
+  - script: |
+      python setup.py install
+    displayName: 'Setup python package.'
+   
   - script: |
       "C:\Program Files\dotnet\dotnet.exe" restore $(Build.SourcesDirectory)\${{ parameters.SolutionName }}.sln --configfile $(System.DefaultWorkingDirectory)\nuget.config --no-cache --verbosity Normal /p:Configuration="${{ parameters.Build }} $(poolFlag)"
   
