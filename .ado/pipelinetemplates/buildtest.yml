@@ -58,11 +58,6 @@ jobs:
     displayName: 'Use python 3.9'
 
   - script: |
-      python -m pip install --upgrade pip
-      pip install -r Requirements.txt
-    displayName: 'Install dependencies'
-
-  - script: |
       pip install --upgrade sphinx
     displayName: 'Install sphinx'
 
