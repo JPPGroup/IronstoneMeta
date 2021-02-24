@@ -60,10 +60,6 @@ jobs:
   - script: |
       pip install --upgrade sphinx
     displayName: 'Install sphinx'
-
-  - script: |
-      python setup.py install
-    displayName: 'Setup python package.'
    
   - script: |
       "C:\Program Files\dotnet\dotnet.exe" restore $(Build.SourcesDirectory)\${{ parameters.SolutionName }}.sln --configfile $(System.DefaultWorkingDirectory)\nuget.config --no-cache --verbosity Normal /p:Configuration="${{ parameters.Build }} $(poolFlag)"
