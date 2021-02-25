@@ -15,3 +15,5 @@ jobs:
   parameters:
     SolutionName: 'Ironstone-Meta'    
     Build: 'ReleaseLocal'
+- template: ../pipelinetemplates/installerpackage.yml  
+    
