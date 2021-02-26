@@ -6,23 +6,32 @@ jobs:
     matrix:     
       2021:
         poolFlag: 2021
+        framework: net472
       2020:
         poolFlag: 2020
+        framework: net472
   dependsOn: Test
   steps:      
+  - checkout: none
   - download: current
     artifact: Build $(poolFlag)
-  - task: CopyFiles@2
-    inputs:
-      contents: |
-        '$(Pipeline.Workspace)\Build $(poolFlag)\**\bin\**'
-        '!**Tests**
-      targetFolder: '$(System.DefaultWorkingDirectory)\installpackage'
+  - powershell: |
+      Get-ChildItem -Recurse * | Where-Object {$_.FullName.EndsWith("$(framework)") -and $_.FullName.Contains("bin") -and !$_.FullName.Contains("Test")} | Copy-Item -Destination $(System.DefaultWorkingDirectory)\installpackage -force -recurse
+    workingDirectory: $(Pipeline.Workspace)\Build $(poolFlag)
+    displayName: 'Copy Files'
   - task: ArchiveFiles@2
     inputs:
-      rootFolderOrFile: '$(System.DefaultWorkingDirectory)\installpackage' 
+      rootFolderOrFile: '$(System.DefaultWorkingDirectory)\installpackage\$(framework)' 
       includeRootFolder: false
       archiveType: 'zip' # Options: zip, 7z, tar, wim      
       archiveFile: '$(Build.ArtifactStagingDirectory)\$(Build.BuildId).zip'       
   - publish: $(Build.ArtifactStagingDirectory)
-    artifact: Install Package $(poolFlag)    
+    artifact: Install Package $(poolFlag)        
+  - task: AzureFileCopy@4
+    inputs:
+      sourcePath: '$(Build.ArtifactStagingDirectory)\$(Build.BuildId).zip'
+      azureSubscription: MLSub
+      destination: azureBlob
+      storage: jppcdnstorage
+      containerName: ironstone
+      blobPrefix: $(Build.SourceBranch)/$(poolFlag)/$(Build.BuildId).zip
