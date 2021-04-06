@@ -28,3 +28,6 @@
 [submodule "IronstoneHousing"]
 	path = IronstoneHousing
 	url = https://github.com/JPPGroup/IronstoneHousing.git
+[submodule "NautilusLink"]
+	path = NautilusLink
+	url = https://github.com/JPPGroup/NautilusLink.git
