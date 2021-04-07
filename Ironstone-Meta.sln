@@ -63,7 +63,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectDocuments.Tests", "P
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Structures", "IronstoneStructures\Structures\Structures.csproj", "{E6989382-8F3C-4201-AB77-F739CC412351}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NautilusLink", "NautilusLink\src\NautilusLink\NautilusLink.csproj", "{C65A864D-D56E-43CA-A346-07DA60A05856}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NautilusLink", "NautilusLink\NautilusLink\NautilusLink.csproj", "{C65A864D-D56E-43CA-A346-07DA60A05856}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
