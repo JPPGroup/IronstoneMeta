@@ -35,7 +35,7 @@ jobs:
     name: Cert
     displayName: 'Download Certificate'
     inputs:
-      secureFile: 'CodeSigning2019.pfx'      
+      secureFile: 'JPP2020.pfx'      
   - task: PowerShell@2
     inputs:
       targetType: 'inline'
