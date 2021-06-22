@@ -28,3 +28,6 @@
 [submodule "IronstoneHousing"]
 	path = IronstoneHousing
 	url = https://github.com/JPPGroup/IronstoneHousing.git
+[submodule "IronstoneDocumentManagement"]
+	path = IronstoneDocumentManagement
+	url = https://github.com/JPPGroup/IronstoneDocumentManagement.git
