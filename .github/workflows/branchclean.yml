@@ -1,0 +1,31 @@
+# This is a basic workflow to help you get started with Actions
+
+name: BranchClean
+
+# Controls when the workflow will run
+on: [delete]  
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:  
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    env:
+      STORAGE_KEY: ${{ secrets.STORAGEKEY }}
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:      
+#    - name: Login via Az module
+#      uses: azure/login@v1
+#      with:
+#        creds: ${{secrets.AZURE_CREDENTIALS}}
+#        enable-AzPSSession: true 
+        
+    - name: Run Azure PowerShell script
+      uses: azure/powershell@v1
+      with:
+        inlineScript: |
+          $context = New-AzureStorageContext -StorageAccountName jppcdnstorage -StorageAccountKey ${{STORAGE_KEY}}
+          Get-AzureStorageBlob -Context $context -Container 'ironstone' -Blob '${{GITHUB_REF}}*' | Remove-AzureStorageBlob
+        azPSVersion: '3.1.0'
