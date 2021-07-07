@@ -27,5 +27,5 @@ jobs:
       with:
         inlineScript: |
           $context = New-AzureStorageContext -StorageAccountName jppcdnstorage -StorageAccountKey ${{ env.STORAGE_KEY}}
-          Get-AzureStorageBlob -Context $context -Container 'ironstone' -Blob '${{GITHUB_REF}}*' | Remove-AzureStorageBlob
+          Get-AzureStorageBlob -Context $context -Container 'ironstone' -Blob '${{ github.ref }}*' | Remove-AzureStorageBlob
         azPSVersion: '3.1.0'
