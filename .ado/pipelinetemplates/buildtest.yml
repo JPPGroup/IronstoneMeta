@@ -94,6 +94,8 @@ jobs:
     clean: all
   strategy:
     matrix:     
+      2022:
+        poolFlag: 2022
       2021:
         poolFlag: 2021
       2020:
