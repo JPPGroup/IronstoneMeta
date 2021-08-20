@@ -64,7 +64,7 @@ jobs:
     displayName: 'Install sphinx'
    
   - script: |
-      "C:\Program Files\dotnet\dotnet.exe" restore $(Build.SourcesDirectory)\${{ parameters.SolutionName }}.sln --configfile $(System.DefaultWorkingDirectory)\nuget.config --no-cache --verbosity Normal /p:Configuration="${{ parameters.Build }} $(poolFlag)"
+      "C:\Program Files\dotnet\dotnet.exe" restore $(Build.SourcesDirectory)\${{ parameters.SolutionName }}.sln --configfile $(System.DefaultWorkingDirectory)\nuget.config --no-cache --verbosity Normal /p:Configuration="${{ parameters.Build }} $(poolFlag);Platform=x64"
   
   - task: VSBuild@1
     inputs:
@@ -72,16 +72,24 @@ jobs:
       platform: 'x64'
       configuration: '${{ parameters.Build }} $(poolFlag)'
       clean: true    
-      msbuildArgs: '/p:RunWixToolsOutOfProc=true'      
+      msbuildArgs: '/p:RunWixToolsOutOfProc=true;Id=$(poolFlag)'      
 
-  - task: NuGetCommand@2
-    inputs:
+#  - task: NuGetCommand@2
+#    inputs:
+#      command: 'pack'
+#      packagesToPack: '**\\*Ironstone*.csproj;!**\\*Tests.csproj;!**\\*Base*Project.csproj'      
+#      configuration: '${{ parameters.Build }} $(poolFlag)'
+#      versioningScheme: 'off'  
+#      buildProperties: 'Id=$(poolFlag);Platform=x64'       
+  - task: DotNetCoreCLI@2
+    inputs: 
       command: 'pack'
-      packagesToPack: '**\\*Ironstone*.csproj;!**\\*Tests.csproj;!**\\*Base*Project.csproj'      
-      configuration: '${{ parameters.Build }} $(poolFlag)'
-      versioningScheme: 'off'  
-      buildProperties: 'Id=$(poolFlag);Platform=x64'        
-      
+      packagesToPack: '**\\*Ironstone*.csproj;**\\*ObjectModel.csproj;!**\\*Tests.csproj;!**\\*Base*Project.csproj'      
+      configurationToPack: '${{ parameters.Build }} $(poolFlag)'
+      buildProperties: 'Id=$(poolFlag);Platform=x64'             
+      nobuild: true      
+      includesymbols: true
+  
   - task: CopyFiles@2
     inputs:
       contents: '$(System.DefaultWorkingDirectory)\**\bin\**'
