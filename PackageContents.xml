@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ApplicationPackage
+    SchemaVersion="1.0"
+    AppVersion="1.0"    
+    ProductCode="5ebb6f2e-72d1-405c-ba70-de75a9a7ccd0"
+    Name="Ironstone"    
+>
+ 
+  <Components>
+    <RuntimeRequirements SupportPath="./Contents/Support"/>
+    <ComponentEntry
+      AppName="IronstoneCore"
+      AppType=".Net"
+      ModuleName="./Contents/IronstoneCore.dll"
+    />
+  </Components>
+</ApplicationPackage>
