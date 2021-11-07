@@ -25,3 +25,11 @@ jobs:
       archiveFile: '$(Build.ArtifactStagingDirectory)\ironstone.zip'       
   - publish: $(Build.ArtifactStagingDirectory)
     artifact: Forge Bundle
+  - task: AzureFileCopy@4
+    inputs:
+      sourcePath: '$(Build.ArtifactStagingDirectory)\ironstone.zip'
+      azureSubscription: MLSub
+      destination: azureBlob
+      storage: jppcdnstorage
+      containerName: ironstone
+      blobPrefix: $(Build.SourceBranch)/forge/ironstone.zip
