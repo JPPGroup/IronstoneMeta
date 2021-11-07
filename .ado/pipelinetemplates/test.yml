@@ -1,0 +1,24 @@
+parameters:
+- name: PoolFlag
+  default: ''
+
+steps:  
+  - download: current
+    artifact: Build $(PoolFlag)
+  - task: VisualStudioTestPlatformInstaller@1
+    inputs:
+      packageFeedSelector: 'nugetOrg'
+      versionSelector: 'latestPreRelease'
+  - task: VSTest@2
+    inputs:
+      testSelector: 'testAssemblies'
+      testAssemblyVer2: |
+        **\*Tests*.dll
+        !**\*TestAdapter.dll
+        !**\obj\**
+      searchFolder: '$(Pipeline.Workspace)'
+      uiTests: true
+      otherConsoleOptions: '/platform:x64'
+      testRunTitle: '$(poolFlag) Tests'
+      failOnMinTestsNotRun: true
+      rerunFailedTests: true

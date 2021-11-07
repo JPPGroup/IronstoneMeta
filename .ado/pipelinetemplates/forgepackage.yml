@@ -1,0 +1,27 @@
+parameters:
+- name: PoolFlag
+  default: ''
+
+jobs:
+- job: Package
+  pool:
+    vmImage: 'windows-latest'    
+  dependsOn: Build
+  steps:        
+  - download: current
+    artifact: Build ${{ parameters.PoolFlag }}
+  - powershell: |
+      Get-ChildItem -Recurse * | Where-Object {$_.FullName.EndsWith("net472") -and $_.FullName.Contains("bin") -and !$_.FullName.Contains("Test")} | Copy-Item -Destination $(System.DefaultWorkingDirectory)\ironstone.bundle\contents -force -recurse      
+    workingDirectory: $(Pipeline.Workspace)\Build ${{ parameters.PoolFlag }}
+    displayName: 'Copy Files'
+  - powershell: |      
+      Copy-Item PackageContents.xml -Destination $(System.DefaultWorkingDirectory)\ironstone.bundle -force -recurse
+    displayName: 'Copy Package Content'
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: '$(System.DefaultWorkingDirectory)\ironstone.bundle' 
+      includeRootFolder: true
+      archiveType: 'zip' # Options: zip, 7z, tar, wim      
+      archiveFile: '$(Build.ArtifactStagingDirectory)\ironstone.zip'       
+  - publish: $(Build.ArtifactStagingDirectory)
+    artifact: Forge Bundle

@@ -1,0 +1,26 @@
+trigger: none
+pr: none
+
+schedules:
+- cron: "0 0 * * *"
+  displayName: Daily Build
+  branches:
+    include:
+    - master
+    - features/*
+    - bugfixes/*    
+      
+jobs:
+- job: Build
+  pool:
+    vmImage: 'windows-latest'  
+  steps:  
+  - template: ../pipelinetemplates/build.yml
+    parameters:
+      SolutionName: 'Ironstone-Meta-Forge' 
+      Build: 'ReleaseLocal'
+      PoolFlag: '2021'
+      Package: false
+- template: ../pipelinetemplates/forgepackage.yml  
+  parameters:
+    PoolFlag: '2021'
