@@ -19,9 +19,9 @@ jobs:
   steps:  
   - template: build.yml
     parameters:
-      SolutionName: SolutionName
-      Build: Build
-      PoolFlag: poolFlag
+      SolutionName: ${{ parameters.SolutionName }}
+      Build: ${{ parameters.Build }}
+      PoolFlag: $(poolFlag)
 
 - job: Test
   workspace:
@@ -40,6 +40,6 @@ jobs:
     name: Autodesk
     demands: Civil3d  -equals $(poolFlag)
   steps:      
-  - template: build.yml
+  - template: test.yml
     parameters:
-      PoolFlag: poolFlag
+      PoolFlag: $(poolFlag)
