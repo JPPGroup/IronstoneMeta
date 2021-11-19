@@ -55,7 +55,7 @@ steps:
       platform: 'x64'
       configuration: '${{ parameters.Build }} ${{ parameters.PoolFlag }}'
       clean: true    
-      msbuildArgs: '/p:RunWixToolsOutOfProc=true;Id=${{ parameters.PoolFlag }}'      
+      msbuildArgs: '/p:RunWixToolsOutOfProc=true;Id=.${{ parameters.PoolFlag }}'      
   
   - ${{ if eq(parameters.Package, true) }}:
     - task: DotNetCoreCLI@2
@@ -63,7 +63,7 @@ steps:
         command: 'pack'
         packagesToPack: '**\\*Ironstone*.csproj;**\\*ObjectModel.csproj;!**\\*Tests.csproj;!**\\*Base*Project.csproj'      
         configurationToPack: '${{ parameters.Build }} ${{ parameters.PoolFlag }}'
-        buildProperties: 'Id=${{ parameters.PoolFlag }};Platform=x64'             
+        buildProperties: 'Id=.${{ parameters.PoolFlag }};Platform=x64'             
         nobuild: true      
         includesymbols: true
   
