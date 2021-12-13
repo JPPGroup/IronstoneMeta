@@ -53,7 +53,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Draughter.TaskPayloads.Conc
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document Management Module", "Document Management Module", "{5BFC964C-5177-4A7A-802F-F45232E1C35F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentManagementObjectModel", "IronstoneObjectModel\DocumentManagement\DocumentManagementObjectModel.csproj", "{0A905F9C-78F0-4F0C-9204-5E96F9F4C728}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IronstoneDocumentManagementObjectModel", "IronstoneObjectModel\DocumentManagement\IronstoneDocumentManagementObjectModel.csproj", "{0A905F9C-78F0-4F0C-9204-5E96F9F4C728}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\src\Common\Common.csproj", "{911A9ECC-5AAF-4927-A708-0AF686E05932}"
 EndProject
