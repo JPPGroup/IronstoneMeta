@@ -13,7 +13,9 @@ jobs:
   - powershell: |
       New-Item -Path "$(System.DefaultWorkingDirectory)" -Name "ironstone.bundle" -ItemType "directory"
       New-Item -Path "$(System.DefaultWorkingDirectory)\ironstone.bundle" -Name "contents" -ItemType "directory"      
-      Get-ChildItem -Recurse * | Where-Object {$_.FullName.EndsWith("net472") -and $_.FullName.Contains("bin") -and !$_.FullName.Contains("Test")} | Copy-Item -Destination $(System.DefaultWorkingDirectory)\ironstone.bundle\contents -force -recurse      
+      Get-ChildItem -Recurse * | Where-Object {$_.FullName.EndsWith("net472") -and $_.FullName.Contains("bin") -and !$_.FullName.Contains("Test")} | Copy-Item -Destination $(System.DefaultWorkingDirectory)\ironstone.bundle\contents -force -recurse    
+      Get-ChildItem -Path $(System.DefaultWorkingDirectory)\ironstone.bundle\contents\net472 -Recurse * | Move-Item -Destination $(System.DefaultWorkingDirectory)\ironstone.bundle\contents
+      Remove-Item $(System.DefaultWorkingDirectory)\ironstone.bundle\contents\net472
     workingDirectory: $(Pipeline.Workspace)\Build ${{ parameters.PoolFlag }}
     displayName: 'Copy Files'
   - powershell: |      
