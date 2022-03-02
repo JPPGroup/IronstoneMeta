@@ -13,6 +13,7 @@
           LoadOnAutoCADStartup="True">
           <Commands GroupName="MyTestCommands">
               <Command Global="IRONSTONE_HELLOWORLD" Local="IRONSTONE_HELLOWORLD" />
+			  <Command Global="NAUT_GENERATESITE" Local="NAUT_GENERATESITE" />
           </Commands>
       </ComponentEntry>
   </Components>
