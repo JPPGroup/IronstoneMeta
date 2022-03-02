@@ -5,7 +5,8 @@
   <Components>
       <RuntimeRequirements
           OS="Win64"
-          Platform="AutoCAD" />
+          Platform="AutoCAD" 
+		  SupportPath="./Contents/"/>
       <ComponentEntry
           AppName="Ironstone"
           ModuleName="./Contents/IronstoneCore.dll"

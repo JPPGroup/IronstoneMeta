@@ -20,6 +20,7 @@ jobs:
     displayName: 'Copy Files'
   - powershell: |      
       Copy-Item PackageContents.xml -Destination $(System.DefaultWorkingDirectory)\ironstone.bundle -force -recurse
+      Get-ChildItem -Recurse ForgeContents | Copy-Item -Destination $(System.DefaultWorkingDirectory)\ironstone.bundle\contents -force -recurse
     displayName: 'Copy Package Content'
   - task: ArchiveFiles@2
     inputs:
