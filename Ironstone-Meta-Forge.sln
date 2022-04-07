@@ -39,6 +39,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignCalculations.Calculat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IronstoneCoreTests", "IronstoneCore\IronstoneCoreTests\IronstoneCoreTests.csproj", "{BAB5674D-DFD9-4E4F-BD28-DB03E0D8A02D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HousingObjectModel", "IronstoneObjectModel\Housing\HousingObjectModel.csproj", "{18AA85C6-6BED-41DB-B06B-2073A544F081}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		DebugLocal 2021|x64 = DebugLocal 2021|x64
@@ -143,6 +145,14 @@ Global
 		{BAB5674D-DFD9-4E4F-BD28-DB03E0D8A02D}.ReleaseLocal 2021|x64.Build.0 = ReleaseLocal 2021|x64
 		{BAB5674D-DFD9-4E4F-BD28-DB03E0D8A02D}.ReleaseLocal 2022|x64.ActiveCfg = ReleaseLocal 2022|x64
 		{BAB5674D-DFD9-4E4F-BD28-DB03E0D8A02D}.ReleaseLocal 2022|x64.Build.0 = ReleaseLocal 2022|x64
+		{18AA85C6-6BED-41DB-B06B-2073A544F081}.DebugLocal 2021|x64.ActiveCfg = DebugLocal 2021|x64
+		{18AA85C6-6BED-41DB-B06B-2073A544F081}.DebugLocal 2021|x64.Build.0 = DebugLocal 2021|x64
+		{18AA85C6-6BED-41DB-B06B-2073A544F081}.DebugLocal 2022|x64.ActiveCfg = DebugLocal 2022|x64
+		{18AA85C6-6BED-41DB-B06B-2073A544F081}.DebugLocal 2022|x64.Build.0 = DebugLocal 2022|x64
+		{18AA85C6-6BED-41DB-B06B-2073A544F081}.ReleaseLocal 2021|x64.ActiveCfg = ReleaseLocal 2021|x64
+		{18AA85C6-6BED-41DB-B06B-2073A544F081}.ReleaseLocal 2021|x64.Build.0 = ReleaseLocal 2021|x64
+		{18AA85C6-6BED-41DB-B06B-2073A544F081}.ReleaseLocal 2022|x64.ActiveCfg = ReleaseLocal 2022|x64
+		{18AA85C6-6BED-41DB-B06B-2073A544F081}.ReleaseLocal 2022|x64.Build.0 = ReleaseLocal 2022|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -162,6 +172,7 @@ Global
 		{6F0ABBA6-3427-4F10-8DD3-97A44C8095E1} = {BB241084-4B61-46CB-A3E5-7F48959F8EEF}
 		{AAE859A0-3917-406A-8DFE-4B906180BBE0} = {BB241084-4B61-46CB-A3E5-7F48959F8EEF}
 		{BAB5674D-DFD9-4E4F-BD28-DB03E0D8A02D} = {5C7C0C5D-4AA8-4D36-A0CD-694F138FFA52}
+		{18AA85C6-6BED-41DB-B06B-2073A544F081} = {BB241084-4B61-46CB-A3E5-7F48959F8EEF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {14409D11-1935-4A87-9CD0-E560716C2FFD}
