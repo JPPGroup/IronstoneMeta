@@ -31,3 +31,6 @@
 [submodule "IronstoneDocumentManagement"]
 	path = IronstoneDocumentManagement
 	url = https://github.com/JPPGroup/IronstoneDocumentManagement.git
+[submodule "NautilusLink"]
+	path = NautilusLink
+	url = https://github.com/JPPGroup/NautilusLink.git
